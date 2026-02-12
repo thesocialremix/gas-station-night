@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[The Social Remix] Gas Station Night</title>
+  <meta name="description" content="A low-effort hangout idea: blind tasting convenience-store beverages + snack pairing." />
+
+  <meta property="og:title" content="[The Social Remix] Gas Station Night" />
+  <meta property="og:description" content="A low-effort hangout idea: blind tasting convenience-store beverages + snack pairing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jfang04.github.io/fun-group-ideas/" />
+  <meta property="og:image" content="https://jfang04.github.io/fun-group-ideas/og/gas-station-night.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Social Remix — Gas Station Night" />
+  <meta name="twitter:description" content="Blind taste-test convenience-store drinks + snack pairing." />
+  <meta name="twitter:image" content="https://jfang04.github.io/fun-group-ideas/og/gas-station-night.png" />
+
+  <style>
+    :root{
+      --bg1: #0b0f1a;
+      --bg2: #101a2b;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --hair: rgba(255,255,255,.14);
+      --accent: rgba(255,255,255,.18);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 980px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 10% 0%, rgba(120,170,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(255,170,200,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px 18px 64px;
+    }
+
+    header{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 4px 22px;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .brand{
+      display:flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .2px;
+      font-weight: 650;
+      color: rgba(255,255,255,.88);
+    }
+
+    .brand p{
+      margin:0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .pill{
+      font-size: 12px;
+      padding: 8px 12px;
+      border: 1px solid var(--hair);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.78);
+      white-space: nowrap;
+    }
+
+    main{
+      padding-top: 26px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 860px){
+      main{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid var(--hair);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 26px 26px 22px;
+      position: relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset: -40% -30% auto -30%;
+      height: 260px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 55%);
+      filter: blur(10px);
+      opacity: .55;
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.76);
+      letter-spacing:.3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.55);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.08);
+    }
+
+    .title{
+      margin: 0 0 10px;
+      font-size: 40px;
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+
+    .summary{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.80);
+      max-width: 58ch;
+    }
+
+    .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.80);
+    }
+
+    .side{
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .side h2{
+      margin: 6px 0 4px;
+      font-size: 14px;
+      letter-spacing: .2px;
+      color: rgba(255,255,255,.86);
+    }
+
+    .side p{
+      margin:0;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.74);
+    }
+
+    .divider{
+      height: 1px;
+      background: var(--hair);
+      margin: 8px 0;
+    }
+
+    footer{
+      margin-top: 22px;
+      padding: 18px 4px 0;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--hair);
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>The Social Remix</h1>
+        <p>Low-effort hangouts by real people</p>
+      </div>
+      <div class="pill">Idea card · shareable</div>
+    </header>
+
+    <main>
+      <section class="card hero" aria-label="Idea">
+        <div class="kicker"><span class="dot"></span>Tonight’s idea</div>
+        <h2 class="title">Gas Station Night</h2>
+        <p class="summary">
+          Everyone brings a beverage from a local convenience store for a blind tasting.  Pair with a snack and rank the best combinations.
+        </p>
+
+        <div class="meta" aria-label="Tags">
+          <span class="chip">cheap</span>
+          <span class="chip">indoors</span>
+          <span class="chip">1 hr</span>
+          <span class="chip">group-friendly</span>
+          <span class="chip">low prep</span>
+        </div>
+      </section>
+
+      <aside class="card side" aria-label="Notes">
+
+        <h2>What you need</h2>
+        <p>One drink per person + any snack you already have.</p>
+
+        <div class="divider"></div>
+
+        <h2>One-line pitch</h2>
+        <p>“Hangout idea: everyone bring one weird gas-station drink. We’ll blind taste-test and rank them.”</p>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© The Social Remix</div>
+      <div>Low-effort hangouts by real people</div>
+    </footer>
+  </div>
+</body>
+</html>
